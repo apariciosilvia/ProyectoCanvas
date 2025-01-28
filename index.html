@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANVAS</title>
+    <link rel="icon" type="image/x-icon" href="./img/icono.ico">
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body>
+    <section id="explicacion">
+        <h2>¿Qué es Canvas?</h2>
+        <p>
+            Canvas es un elemento de HTML5 que funciona como un lienzo digital donde puedes dibujar gráficos,
+            animaciones y manipular imágenes utilizando <strong>JavaScript</strong>.
+            Es ideal para crear contenido visual dinámico, como juegos o visualizaciones de datos.
+        </p>
+    </section>
+
+    <section id="como-funciona">
+        <h2>¿Cómo funciona?</h2>
+            <p>Añade un lienzo en tu HTML:</p>
+            <pre><code>&lt;canvas id="lienzo" width="500" height="300"&gt;&lt;/canvas&gt;</code></pre>
+
+            <p>Accede al lienzo con JavaScript y usa un "pincel":</p>
+            <pre>
+                <code>
+const canvas = document.getElementById('lienzo');
+const ctx = canvas.getContext('2d');
+                </code>
+            </pre>
+
+            <p>Dibuja formas y texto (ejemplo sencillo):</p>
+        <pre><code>
+// Dibujar un rectángulo azul
+ctx.fillStyle = '#3498db';  // Color azul
+ctx.fillRect(50, 50, 200, 100);  // (x, y, ancho, alto)
+    
+// Dibujar un círculo rojo
+ctx.beginPath();  // Iniciar un nuevo dibujo
+ctx.arc(350, 100, 50, 0, Math.PI * 2, false);  // (x, y, radio, ángulo inicial, ángulo final)
+ctx.fillStyle = '#e74c3c';  // Color rojo
+ctx.fill();  // Rellenar el círculo
+ctx.closePath();  // Finalizar el dibujo
+            
+//FIRMO EL CUADRO
+const margin = 20;
+const text = 'Firmado Silvia Aparicio Martín';
+ctx.fillStyle = '#000';
+ctx.font = '16px Arial';
+
+        </code></pre>
+    </section>
+
+    <section id="ejemplo-practico">
+        <h2>Ejemplo práctico</h2>
+        <p>Un rectángulo azul, círculo rojo, línea verde, triángulo amarillo y mi firma:</p>
+        <canvas id="miCanvas" width="500" height="400"></canvas>
+        <script src="./javascript/canva.js"></script>
+    </section>
+
+    <section>
+        <p>Para más información, visita la <a href="https://developer.mozilla.org/es/docs/Web/API/Canvas_API" target="_blank">documentación oficial de MDN</a>.</p>
+    </section>
+      
+</body>
+
+</html>
